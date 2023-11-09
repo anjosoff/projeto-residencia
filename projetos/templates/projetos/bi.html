@@ -1,0 +1,69 @@
+{%extends 'base.html'%}
+
+
+{%block 'titulo'%}Business Inteligence{%endblock%}
+
+
+
+{%block 'conteudo'%}
+<div class="page-container">
+    <nav aria-label="breadcrumb container-fluid">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{%url 'index'%}">Início</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{%url 'index_projetos'%}">Projetos</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Desenvolvimento</li>
+        </ol>
+    </nav>
+    <div class="container">
+        <div class="py-5 text-center">
+            <h1>Desenvolvimento</h1>
+        </div>
+        <p class="text-justify">
+            Por muito tempo, a tecnologia da informação foi considerada um mero item de suporte à organização, que a
+            princípio não gerava
+            qualquer retorno para o negócio. Mas o desenvolvimento de sistemas de TI foram crescendo dentro das
+            organizações
+            e aos poucos ela começou a enriquecer todo o processo organizacional, auxiliando na otimização das
+            atividades.
+        </p>
+    </div>
+</div>
+<div class="pb-5 container">
+    <div class="row">
+         <!-- FOR COMEÇO AQUI -->
+         {%for item in projetos%}
+        <div class="card-deck col-md-6 pt-4 mx-auto">
+            <div class="card">
+                <a href="#">
+                    <img class="card-img-top" src="{{MEDIA_URL}}{{item.imagem}}" alt="Imagem de capa do card">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{item.titulo}}<br>
+                    </h5>
+                    <p class="card-text">
+                        {{item.descricao}}
+                    </p>
+                    <div style="text-align: right;">
+                        Situação: 
+                            {% if item.percentual == 100 %}
+                        concluído
+                        {%else%}
+                        em andamento ({{item.percentual}}%)
+                        {%endif%}
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary btnProj">Ver Detalhes</a>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+</div>
+
+
+{%endblock%}

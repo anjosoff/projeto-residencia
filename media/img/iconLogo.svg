@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="105.388" height="104.905" viewBox="0 0 105.388 104.905">
+  <g id="Grupo_5" data-name="Grupo 5" transform="translate(-511.633 -34)">
+    <path id="Retângulo_29" data-name="Retângulo 29" d="M25,0H52.694a0,0,0,0,1,0,0V104.9a0,0,0,0,1,0,0H25a25,25,0,0,1-25-25V25A25,25,0,0,1,25,0Z" transform="translate(511.633 34)" fill="#010a85"/>
+    <path id="Retângulo_28" data-name="Retângulo 28" d="M25,0H52.694a0,0,0,0,1,0,0V104.9a0,0,0,0,1,0,0H25a25,25,0,0,1-25-25V25A25,25,0,0,1,25,0Z" transform="translate(617.022 138.905) rotate(180)" fill="#4790f7"/>
+    <g id="Elipse_4" data-name="Elipse 4" transform="translate(524.686 47.053)" fill="#fff" stroke="#4790f7" stroke-width="5">
+      <circle cx="39.641" cy="39.641" r="39.641" stroke="none"/>
+      <circle cx="39.641" cy="39.641" r="37.141" fill="none"/>
+    </g>
+    <text id="TI" transform="translate(538.222 107.92)" fill="#4790f7" font-size="57" font-family="Barlow-Black, Barlow Black" font-weight="800"><tspan x="0" y="0">TI</tspan></text>
+  </g>
+</svg>

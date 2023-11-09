@@ -1,0 +1,55 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block 'titulo'%} Projetos {%endblock%}
+
+
+{%block 'conteudo' %} 
+
+<nav aria-label="breadcrumb container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'index'%}">Início</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Projetos</li>
+    </ol>
+</nav>
+<div class="container">
+    <div class="py-5 text-center">
+        <h1>Projetos</h1>
+    </div>
+    <p class="text-justify">
+        Durante os meses da Residência, estão ocorrendo atividades realizadas no TRE/RN pelos alunos residentes.
+        Os alunos desenvolverão, ao longo do aprendizado, inovações tecnológicas
+        nos sistemas e serviços da instituição visando o desenvolvimento de trabalho de conclusão de curso.
+    </p>
+    <p class="text-justify">
+        O projeto está propiciando aos alunos residentes o aprimoramento e qualificação de suas experiências 
+        acadêmicas e profissionais, aos servidores
+        que participarão da pós-graduação <em>lato sensu</em> uma oportunidade de qualificação, atualização e
+        aperfeiçoamento dos seus conhecimentos, bem como, o intercâmbio de conhecimento na área de TIC,
+        e, principalmente, à instituição o benefício da implementação das inovações tecnológicas desenvolvidas.
+    </p>
+</div>
+    <div class="container my-5 card-group text-center">
+        <div class="card mx-1 shadow-sm">
+            <a href="{% url 'index_dev'%}"><img class="card-img-top " src="{%static 'img/dev.svg'%}" alt="Imagem de capa do card">
+                <div class="card-body ">
+                    <h5 class="card-title">Desenvolvimento</h5>
+                </div>
+            </a>
+        </div>
+        <div class="card mx-1 shadow-sm">
+            <a href="{% url 'index_infra'%}"><img class="card-img-top" src="{%static 'img/infra.svg' %}" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Infraestrutura</h5>
+                </div>
+            </a>
+        </div>
+        <div class="card mx-1 shadow-sm">
+            <a href="{% url 'index_bi'%}"><img class="card-img-top" src="{% static 'img/bi.svg'%}" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Business Inteligence - BI</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+
+{%endblock%}

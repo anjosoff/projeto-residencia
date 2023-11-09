@@ -1,0 +1,52 @@
+{%extends 'base.html'%}
+{%load static%}
+{%load humanize%}
+{%block 'titulo'%}Notícias{%endblock%}
+
+{%block 'conteudo'%}
+<nav aria-label="breadcrumb container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{%url 'index'%}">Início</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Notícias</li>
+    </ol>
+</nav>
+<div class="container">
+    <div class="py-5 pt-4 text-center">
+        <h1>Notícias</h1>    
+    </div>
+    <div class="card-columns mt-4">
+        {%for post in posts %}
+        <div class="card">
+
+            <a href="{{post.link}} " target="_blank">
+                 {% if post.imagem_noticia %}
+                <img class="card-img-top"
+                     src="{{post.imagem_noticia.url}}"
+                     alt="Card image cap">
+                {%endif%}
+            </a>
+
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="{{post.link}}" target="_blank">
+                        {{post.titulo}}
+                    </a>
+                </h5>
+                <hr>
+                <p class="card-text">
+                    <small class="text-muted">
+                         Postado por <b>{{post.autor}}</b> 
+                         em {{ post.data | naturaltime | title}}  
+                        |  {{post.categoria}}</small>
+                </p>
+                <div class="text-right">
+                    <a href="{{post.link}}" class="btn btn-primary btn-sm" target="_blank"><b>Ver notícia</b></a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+{% endblock %}

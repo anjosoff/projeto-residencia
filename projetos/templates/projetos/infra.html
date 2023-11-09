@@ -1,0 +1,67 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block 'titulo'%}Infraestrutura{%endblock%}
+
+{%block 'conteudo'%}
+
+<nav aria-label="breadcrumb ">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{%url 'index'%}">Início</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="{%url 'index_projetos'%}">Projetos</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Desenvolvimento</li>
+    </ul>
+</nav>
+<div class="page-container">
+    <div class="container">
+        <div class="py-5 text-center">
+            <h1>Infraestrutura</h1>
+            <p class="text-justify">
+                A infraestrutura de TI é o conjunto combinado de hardware, software, redes, instalações, além de todo o
+                equipamento relacionado
+                à tecnologia da informação, usado para desenvolver, testar, fornecer, monitorar, controlar ou suportar
+                serviços
+                de TI.</p>
+        </div>
+    </div>
+</div>
+
+<div class="pb-5 container">
+    <div class="row">
+         <!-- FOR COMEÇO AQUI -->
+         {%for item in projetos%}
+        <div class="card-deck col-md-6 pt-4 mx-auto">
+            <div class="card">
+                <a href="#">
+                    <img class="card-img-top" src="{%static 'img/infra.svg' %}" alt="Imagem de capa do card">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{item.titulo}}<br>
+                    </h5>
+                    <p class="card-text">
+                        {{item.descricao}}
+                    </p>
+                    <div style="text-align: right;">
+                        Situação: 
+                            {% if item.percentual == 100 %}
+                        concluído
+                        {%else%}
+                        em andamento ({{item.percentual}}%)
+                        {%endif%}
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary btnProj">Ver Detalhes</a>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,6 @@
+django
+django-summernote
+pillow
+requires
+django-crispy-forms
+tk

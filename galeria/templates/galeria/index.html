@@ -1,0 +1,59 @@
+{%extends 'base.html'%}
+{%load static%}
+{%load humanize%}
+{%block 'titulo'%}Galeria{%endblock%}
+
+{%block 'conteudo'%}
+<nav aria-label="breadcrumb container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{%url 'index'%}">Início</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Galeria</li>
+    </ol>
+</nav>
+<div class="container">
+    
+    <div class="py-5 pt-4 text-center">
+        <h1>Galeria</h1>    
+    </div>
+    <div class="card-columns mt-4">
+        {%for post in posts %}
+        <div class="row">
+        <div class="col">
+        <div class="card">
+
+            <a href="{%url 'galeria_detalhes' post.id %}">
+                 {% if post.imagem_galeria %}
+                <img class="card-img-top"
+                     src="{{post.imagem_galeria.url}}"
+                     alt="Card image cap" title="Ir para {{post.titulo}}" >
+                {%endif%}
+            </a>
+
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="{%url 'galeria_detalhes' post.id%}">
+                        {{post.titulo}}
+                    </a>
+                </h5>
+                <p class="card-text">{{ post.excerto }}</p>
+                <p class="card-text">
+                    <small class="text-muted"> {{ post.data | naturalday | title }}  
+                        |  {{ post.numero_comentarios}} Comentário(s) 
+                        |  {{post.categoria}}</small>
+                </p>
+                <div class="text-right">
+                    <a href="{%url 'galeria_detalhes' post.id %}" class="btn btn-outline-secondary" title="Ir para {{post.titulo}}">Ir para <b>{{post.titulo}}</b></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    {%endfor%}
+</div>
+</div>
+
+{% endblock %}

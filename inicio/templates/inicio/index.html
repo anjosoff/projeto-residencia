@@ -1,0 +1,111 @@
+
+{% extends 'base.html'%}
+{%load static%}
+{%block 'titulo'%} Rêsidencia TI{%endblock%}
+
+<!-- teste -->
+{%block 'conteudo'%}
+
+<main role="main" class="container-fluid px-0">
+    <div id="carouselIndex" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li class="bg-primary active" data-target="#carouselIndex" data-slide-to="0"></li>
+            <li class="bg-primary" data-target="#carouselIndex" data-slide-to="1"></li>
+            <li class="bg-primary" data-target="#carouselIndex" data-slide-to="2"></li>
+            <li class="bg-primary" data-target="#carouselIndex" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner text-center">
+            <div class="carousel-item active bg-1 p-5">
+                <div class="logo">
+                    <img class="img-fluid" src="{%static 'img/logoColor.png'%}">
+                </div>
+            </div>
+            <div class="carousel-item bg-2">
+                <div class="text-light logo">
+                    <p class="titulo">DESENVOLVIMENTO
+                        <br> DE SOFTWARE</p>
+                </div>
+            </div>
+            <div class="carousel-item bg-3">
+                <div class="text-light logo">
+                    <p class="titulo">BUSINESS INTELIGENCE</p>
+                </div>
+            </div>
+            <div class="carousel-item bg-4">
+                <div class="text-light logo">
+                    <p class="titulo">INFRAESTRUTURA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="text-center py-5 px-1">Sobre a Residência TI</h1>
+    <div class="container px-3">
+        <div class="text-justify">
+            <!-- <h3>Texto introdutório sobre a Residência TI</h3> -->
+            <p>O projeto foi iniciado em 2018, com duração prevista de dezoito meses – dezembro/2018 a agosto/2020 – tendo como
+                objetivos gerais:</p>
+            <p>
+                1. Implantar um programa de residência em Tecnologia da Informação no Tribunal Regional Eleitoral do Rio Grande do Norte
+                (TRE-RN) em parceria com a Universidade Federal do Rio Grande do Norte (UFRN) / Instituto Metrópole Digital
+                (IMD);
+            </p>
+            <p>
+                2. Inserir os residentes em ambientes e projetos reais de TI, permitindo um melhor entendimento dos problemas enfrentados
+                na prática;</p>
+            <p>
+                3. Promover a capacitação em nível de pós-graduação
+                <em>lato sensu</em>, tanto para os residentes, quanto para servidores do TRE-RN, inclusive por meio de oferecimento
+                de vagas internas;</p>
+            <p>
+                4. Incluir atividades de inovação tecnológica na área de TI;</p>
+            <p>
+                5. Facilitar os processos de transferência de tecnologias desenvolvidas pela universidade;</p>
+            <p>
+                6. Promover o desenvolvimento de mão de obra qualificada, sendo assim, um importante mecanismo para o fortalecimento do polo
+                de Tecnologia da Informação e para a sociedade do Rio Grande do Norte.</p>
+        </div>
+    </div>
+    </div>
+    <div class="container my-5 card-group text-center">
+        <div class="card mx-1 shadow-sm">
+            <a href="{%url 'index_dev'%}">
+                <img class="card-img-top " src="{%static 'img/dev.svg'%}" alt="Imagem de capa do card">
+                <div class="card-body ">
+                    <h5 class="card-title">Desenvolvimento</h5>
+                </div>
+            </a>
+        </div>
+        <div class="card mx-1 shadow-sm">
+            <a href="{%url 'index_infra'%}">
+                <img class="card-img-top" src="{%static 'img/infra.svg'%}" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Infraestrutura</h5>
+                </div>
+            </a>
+        </div>
+        <div class="card mx-1 shadow-sm">
+            <a href="{%url 'index_bi'%}">
+                <img class="card-img-top" src="{%static 'img/bi.svg'%}" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Business Inteligence - BI</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="container ">
+        <div class="row bg-white py-5 my-5 mx-auto">
+            <div class="col-md-4 my-3 mx-auto">
+                <img src="{%static 'img/logo.png'%}" alt="..." height="50px" title="Logotipo do TRE-RN">
+            </div>
+            <div class="col-md-4 my-3 mx-auto">
+                <img src="{%static 'img/ufrn.png'%}" alt="..." height="50px" title="Logotipo da UFRN">
+            </div>
+            <div class="col-md-4 my-3 mx-auto">
+                <img src="{%static 'img/imdlogo.svg'%}" alt="..." height="50px" title="Logotipo do IMD">
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{%endblock%}

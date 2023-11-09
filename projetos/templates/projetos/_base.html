@@ -1,0 +1,148 @@
+{%extends 'base.html'%}
+{%block 'conteudo'%} 
+<div class="page-container">
+    <nav aria-label="breadcrumb container-fluid">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../index.html">Início</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="../projs.html">Projetos</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="../infra.html">Infraestrutura</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {%block 'titulo_projeto'%} {%endblock%}
+            </li>
+        </ol>
+    </nav>
+    <div class="container py-4">
+        <div class="py-5 text-center">
+            <h1>
+                {%block 'titulo_projeto'%} {%endblock%}
+            </h1>
+        </div>
+        <p>
+            {%block 'desc_projeto'%} {%endblock%}
+
+
+            <br>
+            <br>Áreas de Negócio:
+            <% areasDeNegocio.forEach( area => { %>
+            <span class="bold">
+                {%block 'areanegocio_projeto'%} {%endblock%}
+            </span>
+            <%});%>
+            <br>
+            <br> RESIDENTES:
+
+            <% residentes.forEach(residente => { %>
+            <br>
+            <span class="bold">
+                {%block 'residente_projeto'%} {%endblock%}
+            </span>
+            <%});%>
+            <br><br>
+            SITUAÇÃO: <span class="bold">
+                {%block 'percentual_projeto'%} {%endblock%}
+            </span>
+        </p>
+
+    </div>
+    <div class="container-fluid info-complementar-bg p-0">
+        <div class="container p-0">
+            <h3 class="text-center pt-4">OBJETIVOS</h3>
+            <div class="pt-4 border-light">
+                <div class="card-deck text-center">
+                    {%block 'objetivo_projeto'%} {%endblock%}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-2 p-4">
+        <h3 class="text-center">ALINHAMENTO: PEJERN / PETIC 2016 - 2020</h3>
+        <p class="pt-4">
+            <span class="bold">Instrumento:</span>
+            {%block 'alinhamneto_projeto_inst'%} {%endblock%}
+            <br>
+            <br>
+            <span class="bold">
+                {%block 'alinhamneto_projeto_titulo'%} {%endblock%}
+            </span>
+            {%block 'alinhamneto_projeto_obj'%} {%endblock%}
+        </p>
+    </div>
+
+</div>
+
+<div class="container-fluid funcs p-5">
+    <div class="container">
+        <h3 class="text-center pb-4">FUNCIONALIDADES</h3>
+        <ol>
+            {%block 'funcinalidade_projeto'%} {%endblock%}
+        </ol>
+    </div>
+</div>
+<div class="container-fluid riscos py-3">
+    <div class="container table-fluid">
+        <h3 class="text-center pb-4">RISCOS</h3>
+
+        <table class="table table-borderless table-hover table-light">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th scope="col">RISCO</th>
+                    <th scope="col">ESTRATÉGIA</th>
+                    <th scope="col">AÇÃO</th>
+                    <th scope="col">PROBABILIDADE</th>
+                    <th scope="col">IMPACTO</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%block 'riscos_projeto'%} {%endblock%}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container-fluid funcs py-3 mb-5 text-center">
+    {%block 'estimativa'%} {%endblock%}
+</div>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-sm-4">
+            <div class="card mb-5">
+                <div class="card-header">Grau de Complexidade</div>
+                <div class="card-body">
+                    <p class="card-text text-center">
+                        {%block 'complexidade_projeto'%} {%endblock%}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mb-5">
+                <div class="card-header">Grau de Inovação</div>
+                <div class="card-body">
+                    <p class="card-text text-center">
+                        {%block 'inovacao_projeto'%} {%endblock%}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mb-5">
+                <div class="card-header">Potencial de Alcance</div>
+                <div class="card-body">
+                    <p class="card-text text-center">
+                        {%block 'alcance_projeto'%} {%endblock%}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{%endblock%}

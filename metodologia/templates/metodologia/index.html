@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+{% load static%}
+
+
+{%block 'titulo'%} Metodologia {%endblock%}
+
+
+{% block 'conteudo'%} 
+<nav aria-label="breadcrumb container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{%url 'index'%}">Início</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Metodologia</li>
+    </ol>
+</nav>
+<div class="container">
+    <div class="py-5 text-center">
+        <h1>Metodologia</h1>
+        <h4 class="text-justify my-3 text-secondary">Os projetos serão executados de acordo com a
+            <b> metodologia ágil Scrum</b>, adaptada à realidade do Tribunal. As principais convenções e diretrizes desta metodologia
+            são as seguintes:</h4>
+        <img class="img-fluid" src="{% static 'img/scrum.jpg'%}" alt="">
+        <p class="text-justify">
+            A equipe de desenvolvedores de cada projeto é chamada de
+            <b> Scrum Team.</b>
+            <br/>
+            <br/> Os projetos são divididos em vários ciclos de trabalho, chamados de
+            <b>Sprints</b>, ao fim dos quais entregas parciais são realizadas. Para a Residência de TI, cada Sprint terá duração
+            de três semanas.
+            <br/>
+            <br/> Cada projeto possui um responsável por assegurar que o Team siga os valores e práticas do Scrum, protegendo
+            as equipes e assegurando que elas não se comprometam excessivamente com relação àquilo que são capazes de realizar
+            durante um Sprint. Esse papel é exercido pelo
+            <b>Scrum Master</b>, que no âmbito da Residência de TI, será desempenhado pelo Preceptor.
+            <br/>
+            <br/> A lista de requisitos a ser atendida pelo projeto é chamada de
+            <b>Product Backlog</b>. Ela e é elaborada e priorizada pelo servidor da área de negócio responsável pelo projeto,
+            que, de acordo com o Scrum, é chamado de
+            <b>Product Owner.</b>
+            <br/>
+            <br/> No início de cada Sprint, os itens do Product Backlog que forem alocados para desenvolvimento naquele ciclo
+            de trabalho farão parte de uma lista de tarefas chamada de
+            <b>Sprint Backlog</b>.
+            <br/>
+            <br/> A definição do Sprint Backlog irá ocorrer a cada ciclo, durante a sua reunião inicial de planejamento chamada
+            <b>Sprint Planning Meeting.</b>
+            <br/>
+            <br/> O acompanhamento de cada projeto é feito diariamente através de reuniões chamadas
+            <b>Daily Scrum</b>, realizadas no início do expediente. Serão compartilhados os avanços do dia anterior, identificados
+            eventuais impedimentos que afetem o projeto e priorizadas as atividades a serem realizadas ao longo do dia que
+            se inicia. Os impedimentos identificados no Daily Scrum devem ser tratados pelo Scrum Master o mais rapidamente
+            possível. Os pontos relevantes registrados em cada Daily Scrum serão registrados em assentamentos próprios, para
+            fins de acompanhamento pelos Professores e pelo Scrum Master.
+            <br/>
+            <br/> Ao final de cada Sprint haverá uma reunião de apresentação das funcionalidades implementadas, chamada de
+            <b>Sprint Review Meeting</b>, que contará com a participação do Product Owner, Scrum Team, Scrum Master, Professores
+            e demais interessados no projeto.
+        </p>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,79 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block 'titulo'%}Equipe{%endblock%}
+
+
+{%block 'conteudo'%}
+<nav aria-label="breadcrumb container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="../index.html">Início</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Equipe</li>
+    </ol>
+</nav>
+
+<div class="containter py-5">
+  <div class="text-center">
+    <h1>
+      Equipes da Residência em TI
+    </h1>
+  </div>
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Equipe 2022
+          </button>
+        </h5>
+      </div>
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        {%include 'equipes/_2022.html'%}
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Equipe 2021
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+          {%include 'equipes/_2021.html'%}
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Equipe 2020
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-body">
+          {%include 'equipes/_2020.html'%}
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingFour">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Equipe 2021
+          </button>
+        </h5>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+        <div class="card-body">
+          {%include 'equipes/_2021.html'%}
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+{%endblock%}
